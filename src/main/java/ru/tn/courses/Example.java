@@ -1,4 +1,4 @@
-package ru.tn.cources;
+package ru.tn.courses;
 
 public class Example {
     public static void main(String[] args) {
