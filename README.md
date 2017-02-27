@@ -14,6 +14,7 @@ Student projects for Java courses
 *ru.tn.courses.mmaters.task1*. 
 Структура в пакетах *task** на усмотрение разработчика.
 - после выполнения ЛР, выполнить pull request
+в качестве ревьюверов выбирать rnemykin, 0x100
 
 # Варианты
 | Студент | Вариант |
