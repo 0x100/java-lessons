@@ -15,3 +15,32 @@ Student projects for Java courses
 Структура в пакетах *task** на усмотрение разработчика.
 - после выполнения ЛР, выполнить pull request
 
+# Варианты
+| Студент | Вариант |
+| ------ | ------ |
+| Daria Chernomorets  | 4 |
+| Danil Makoshenko    | 2 |
+| Анатолий Бойко      | 1 |
+| Ivan Borisenko      | 1 |
+| P.S. InDIGO         | 2 |
+| Денис Батищев       | 2 |
+| Коба Самхарадзе     | 5 |
+| Сергей С.           | 3 |
+| Maxim Ryabykh       | 1 |
+| Karen Sagradyan     | 4 |
+| Viktor Vigonyailo   | 4 |
+| Роман Панов         | 5 |
+| Kirill Leskin       | 2 |
+| Yana Eroshenko      | 1 |
+| Mikhail Moiseev     | 4 |
+| Alexander Vardanian | 3 |
+| Dasha Yatsynyuk     | 4 |
+| Шуточки уточки      | 3 |
+| Dmitriy Ignatov     | 3 |
+| Alyona Chernyshova  | 1 |
+| Nikolay Mironov     | 5 |
+| Sergey Serousov     | 5 |
+| Edwards Ed          | 5 |
+| Egor Ganzhela       | 3 |
+| Slyuta Natali       | 2 |
+
