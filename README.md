@@ -13,7 +13,7 @@ Student projects for Java courses
 - Создаем пакет c именем *task_номер_лабараторной_работы*, т.е. для первой будет
 *ru.tn.courses.mmaters.task1*. 
 Структура в пакетах *task** на усмотрение разработчика.
-- После выполнения задания выполнить [pull request](https://github.com/0x100/java-lessons/compare), код ревьювером выбирать:
+- После выполнения задания выполнить [pull request](https://github.com/0x100/java-lessons/compare), ревьюерами кода выбрать:
     - [rnemykin](https://github.com/rnemykin)
     - [0x100](https://github.com/0x100)
 
