@@ -13,8 +13,9 @@ Student projects for Java courses
 - создаем пакет c именем *task_номер_лабараторной_работы*, т.е. для первой будет
 *ru.tn.courses.mmaters.task1*. 
 Структура в пакетах *task** на усмотрение разработчика.
-- после выполнения ЛР, выполнить pull request
-в качестве ревьюверов выбирать rnemykin, 0x100
+- после выполнения ЛР, выполнить pull request, код ревьювером выбирать:
+    - [rnemykin](https://github.com/rnemykin)
+    - [0x100](https://github.com/0x100)
 
 # Варианты
 | Студент | Вариант |
