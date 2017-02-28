@@ -4,16 +4,24 @@ Student projects for Java courses
 # How to
 
 Для выполнения лабораторных работ необходимо:
-- сделать форк репозитория.
+- Сделать форк репозитория (кнопка Fork справа вверху).
 - В репозитории есть базовый пакет *ru.tn.courses*, создаем в нем пакет в соответствии со своим именем,
 например, студент Маршал Мэтерс, должен создать пакет mmaters (первая буква имени и фамилия полностью).
 
     *ru.tn.courses.mmaters*
 
-- создаем пакет c именем *task_номер_лабараторной_работы*, т.е. для первой будет
-*ru.tn.courses.mmaters.task1*. 
-Структура в пакетах *task** на усмотрение разработчика.
-- после выполнения ЛР выполнить pull request, код ревьювером выбирать:
+- Создаем пакет c именем *task_номер-лабараторной-работы*, т.е. для первой будет
+*ru.tn.courses.mmaters.task1*.
+- Cоздаем пакет с номером варианта
+*ru.tn.courses.mmaters.task1.v5*.
+- Под каждое задание создаем пакет subtask_номер-задания-в-л-р
+    - *ru.tn.courses.mmaters.task1.v5.subtask1*
+    - *ru.tn.courses.mmaters.task1.v5.subtask2*
+    - *ru.tn.courses.mmaters.task1.v5.subtask3*
+
+    В каждом таком пакете должен быть класс *Main* - точка входа и основная логика приложения.
+Остальная структура в пакетах *subtask** - на усмотрение разработчика
+- После выполнения задания выполнить [pull request](https://github.com/0x100/java-lessons/compare), **ревьюерами кода выбрать**:
     - [rnemykin](https://github.com/rnemykin)
     - [0x100](https://github.com/0x100)
 
@@ -45,8 +53,13 @@ Student projects for Java courses
 | Edwards Ed          | 5 |
 | Egor Ganzhela       | 3 |
 | Slyuta Natali       | 2 |
+| Kirill Skubnikov    | 4 |
+| Vadim Zavolok       | 1 |
+| Владимир Лысых      | 3 |
+| Natalya Tseytlina   | 2 |
+| Pablo               | 5 |
 | Max Grebnev         | 4 |
 | Sergey Rostov       | 3 |
 
 # Список ЛР:
-- [Лр №1](https://github.com/0x100/java-lessons/wiki/task1)
+- [Лабораторная работа №1](https://github.com/0x100/java-lessons/wiki/task1)
