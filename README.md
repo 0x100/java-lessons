@@ -47,7 +47,7 @@ Student projects for Java courses
 | Slyuta Natali       | 2 |
 | Kirill Skubnikov    | 4 |
 | Vadim Zavolok       | 1 |
-| Vadim Zavolok       | 3 |
+| Владимир Лысых      | 3 |
 
 # Список ЛР:
 - [Лабораторная работа №1](https://github.com/0x100/java-lessons/wiki/task1)
