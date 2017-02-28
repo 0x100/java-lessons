@@ -5,10 +5,10 @@ import java.util.Arrays;
 import java.util.Random;
 
 public class Main {
-    public static int [] array;
-    public static int [] zeroIndexes;
-    public static final int size = 15;
-    public static int zeroCounter;
+    private static int [] array;
+    private static int [] zeroIndexes;
+    private static final int size = 15;
+    private static int zeroCounter;
 
     public static void main (String [] args) {
         init();
