@@ -1,5 +1,7 @@
 package ru.tn.courses.ntseytlina.task1.v2.subtask3;
 
+import java.util.Arrays;
+
 public class Array {
     private int [] array;
     private int size;
@@ -28,11 +30,6 @@ public class Array {
 
     @Override
     public String toString() {
-        String str = "[ ";
-        for (int i = 0; i < size; i++) {
-            str += array[i] + " ";
-        }
-        str += "]";
-        return str;
+        return Arrays.toString(array);
     }
 }
