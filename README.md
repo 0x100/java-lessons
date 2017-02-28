@@ -13,7 +13,7 @@ Student projects for Java courses
 - Создаем пакет c именем *task_номер_лабараторной_работы*, т.е. для первой будет
 *ru.tn.courses.mmaters.task1*. 
 Структура в пакетах *task** на усмотрение разработчика.
-- После выполнения задания выполнить [pull request](https://github.com/0x100/java-lessons/compare), ревьюерами кода выбрать:
+- После выполнения задания выполнить [pull request](https://github.com/0x100/java-lessons/compare), **ревьюерами кода выбрать**:
     - [rnemykin](https://github.com/rnemykin)
     - [0x100](https://github.com/0x100)
 
@@ -45,6 +45,9 @@ Student projects for Java courses
 | Edwards Ed          | 5 |
 | Egor Ganzhela       | 3 |
 | Slyuta Natali       | 2 |
+| Kirill Skubnikov    | 4 |
+| Vadim Zavolok       | 1 |
+| Vadim Zavolok       | 3 |
 
 # Список ЛР:
 - [Лабораторная работа №1](https://github.com/0x100/java-lessons/wiki/task1)
