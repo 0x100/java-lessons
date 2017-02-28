@@ -15,9 +15,10 @@ Student projects for Java courses
 - Cоздаем пакет с номером варианта
 *ru.tn.courses.mmaters.task1.v5*.
 - Под каждое задание создаем пакет subtask_номер_задания_в_л_р
-    - *ru.tn.courses.mmaters.task1.v5.subtask1*.
-    - *ru.tn.courses.mmaters.task1.v5.subtask2*.
-    - *ru.tn.courses.mmaters.task1.v5.subtask3*.
+    - *ru.tn.courses.mmaters.task1.v5.subtask1*
+    - *ru.tn.courses.mmaters.task1.v5.subtask2*
+    - *ru.tn.courses.mmaters.task1.v5.subtask3*
+    
 В каждом таком пакете должен быть класс *Main* - точка входа и основная логика приложения
 Остальная структура в пакетах *subtask** - на усмотрение разработчика
 - После выполнения задания выполнить [pull request](https://github.com/0x100/java-lessons/compare), **ревьюерами кода выбрать**:
