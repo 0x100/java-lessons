@@ -45,6 +45,8 @@ Student projects for Java courses
 | Edwards Ed          | 5 |
 | Egor Ganzhela       | 3 |
 | Slyuta Natali       | 2 |
+| Max Grebnev         | 4 |
+| Sergey Rostov       | 3 |
 
 # Список ЛР:
 - [Лр №1](https://github.com/0x100/java-lessons/wiki/task1)
