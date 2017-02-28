@@ -9,8 +9,7 @@ import java.util.Random;
 public class Main {
 
     private static int[ ] arr;
-    private static final int SIZE = 5;
-    private static final int BOUND = 12;
+    private static final int SIZE = 10;
     private static boolean flag = true;
 
     public static void main(String[] args) {
@@ -29,7 +28,7 @@ public class Main {
         arr = new int[SIZE];
         Random rnd = new Random();
         for (int i = 0; i < arr.length; i++){
-            arr[i] = rnd.nextInt(BOUND);
+            arr[i] = rnd.nextInt(SIZE);
         }
     }
 }
