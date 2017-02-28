@@ -1,5 +1,6 @@
-package task2;
+package task1;
 
+import java.util.Arrays;
 import java.util.Random;
 
 /**
@@ -8,16 +9,20 @@ import java.util.Random;
 public class Main {
 
     private static int[ ] arr;
-    private static final int SIZE = 25;
-    public static final int BOUND = 12;
+    private static final int SIZE = 5;
+    private static final int BOUND = 12;
+    private static boolean flag = true;
 
     public static void main(String[] args) {
         arrInit();
-        int i = 1;
-        while(i < arr.length){
-            System.out.print(i + ":" + arr[i] + " ");
-            i = i<<1;
+        for (int i = 0; i < arr.length - 1; i++) {
+            if(arr[i] > arr[i+1]){
+                flag = false;
+                break;
+            }
         }
+        System.out.println(Arrays.toString(arr));
+        System.out.println("Incr?: " + flag);
     }
 
     private static void arrInit(){
