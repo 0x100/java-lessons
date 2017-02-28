@@ -11,8 +11,11 @@ Student projects for Java courses
     *ru.tn.courses.mmaters*
 
 - Создаем пакет c именем *task_номер_лабараторной_работы*, т.е. для первой будет
-*ru.tn.courses.mmaters.task1*. 
-Структура в пакетах *task** на усмотрение разработчика.
+*ru.tn.courses.mmaters.task1*.
+ - создаем пакет с номером варианта
+*ru.tn.courses.mmaters.task1.v5*.
+Структура в пакетах *task*.v** на усмотрение разработчика.
+**НО! Под каждое задание отводить отдельный класс, например, SubTask1, SubTask2, SubTask3**
 - После выполнения задания выполнить [pull request](https://github.com/0x100/java-lessons/compare), **ревьюерами кода выбрать**:
     - [rnemykin](https://github.com/rnemykin)
     - [0x100](https://github.com/0x100)
