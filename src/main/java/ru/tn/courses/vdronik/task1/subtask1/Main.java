@@ -1,10 +1,10 @@
-package t1;
+п»їpackage t1;
 
 public class Main {
 	public static void main(String[] args) {
 		int n = 20;
 		int [] arr = new int[n];
-		System.out.println("Исходная последовательность:");
+		System.out.println("РСЃС…РѕРґРЅР°СЏ РїРѕСЃР»РµРґРѕРІР°С‚РµР»СЊРЅРѕСЃС‚СЊ:");
 		for (int i = 0; i < arr.length; i++) {
 		    arr[i] =  (int) (Math.random() * 300 - 150);
 		    System.out.print(arr[i]+" ");
@@ -21,7 +21,7 @@ public class Main {
 		
 	    
 		System.out.println(" ");
-	    System.out.println("Массив чётных чисел");
+	    System.out.println("РњР°СЃСЃРёРІ С‡С‘С‚РЅС‹С… С‡РёСЃРµР»");
 		for (int i = 0; i < j; i++) {
 		    System.out.print(res[i]+" ");
 		}

@@ -1,4 +1,4 @@
-package t2;
+п»їpackage t2;
 
 public class Main {
 	public static void main(String[] args) {
@@ -10,10 +10,10 @@ public class Main {
 			a=b;
 			b=t;
 		}
-		System.out.println("Высота дерева "+b+" см, улитка находится на высоте " +a+ "см");
+		System.out.println("Р’С‹СЃРѕС‚Р° РґРµСЂРµРІР° "+b+" СЃРј, СѓР»РёС‚РєР° РЅР°С…РѕРґРёС‚СЃСЏ РЅР° РІС‹СЃРѕС‚Рµ " +a+ "СЃРј");
 		int [] arr = new int[n];
 		for (int i = 0; i < arr.length; i++) {
-		    arr[i] =  (int) Math.round(Math.random()); //Если день солнечный arr[i]==1, если пасмурный - arr[i]==0;
+		    arr[i] =  (int) Math.round(Math.random()); //Р•СЃР»Рё РґРµРЅСЊ СЃРѕР»РЅРµС‡РЅС‹Р№ arr[i]==1, РµСЃР»Рё РїР°СЃРјСѓСЂРЅС‹Р№ - arr[i]==0;
 		    System.out.print(arr[i]+" ");
 		}
 		
@@ -21,9 +21,9 @@ public class Main {
 			if (arr[i]==0) a--; else a+=2;
 		}
 		
-	    if (a<=0) System.out.println("улитка сползла с дерева");
-	    else if (a<b) System.out.println("улитка находится на дереве на высоте "+a+" см");
-	    else System.out.println("улитка залезла на верхушку дерева");
+	    if (a<=0) System.out.println("СѓР»РёС‚РєР° СЃРїРѕР»Р·Р»Р° СЃ РґРµСЂРµРІР°");
+	    else if (a<b) System.out.println("СѓР»РёС‚РєР° РЅР°С…РѕРґРёС‚СЃСЏ РЅР° РґРµСЂРµРІРµ РЅР° РІС‹СЃРѕС‚Рµ "+a+" СЃРј");
+	    else System.out.println("СѓР»РёС‚РєР° Р·Р°Р»РµР·Р»Р° РЅР° РІРµСЂС…СѓС€РєСѓ РґРµСЂРµРІР°");
 		System.out.println(" ");
 	    
 	}

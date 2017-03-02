@@ -1,10 +1,10 @@
-package t3;
+п»їpackage t3;
 
 public class Main {
 	public static void main(String[] args) {
 		int n = 20;
 		double[] arr = new double[n];
-		System.out.println("Массив до сортировки:");
+		System.out.println("РњР°СЃСЃРёРІ РґРѕ СЃРѕСЂС‚РёСЂРѕРІРєРё:");
 		for (int i = 0; i < arr.length; i++) {
 		    arr[i] =  Math.random() * 300 - 150;
 		    System.out.print(arr[i]+" ");
@@ -25,7 +25,7 @@ public class Main {
 		}
 	    
 		System.out.println(" ");
-	    System.out.println("Массив после сортировки:");
+	    System.out.println("РњР°СЃСЃРёРІ РїРѕСЃР»Рµ СЃРѕСЂС‚РёСЂРѕРІРєРё:");
 		for (int i = 0; i < arr.length; i++) {
 		    System.out.print(arr[i]+" ");
 		}
