@@ -1,3 +1,5 @@
+package ru.tn.courses.task1subtask2v4;
+
 import java.util.Arrays;
 
 public class Main {
