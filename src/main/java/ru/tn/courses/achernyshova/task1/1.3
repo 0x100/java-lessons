@@ -1,0 +1,48 @@
+import java.util.Scanner;
+
+public class Sequence {
+    public static void main(String args[]) {
+        Scanner in = new Scanner(System.in);
+
+        System.out.println("Введите размерность первого массива");
+        int n1 = in.nextInt();
+        int A[] = new int[n1];
+
+        System.out.println("Введите первую неубывающую последовательность:");
+        for(int i = 0; i < n1; i++) A[i] = in.nextInt();
+
+        System.out.println("Введите размерность второго массива");
+        int n2 = in.nextInt();
+        int B[] = new int[n2];
+
+        System.out.println("Введите вторую неубывающую последовательность:");
+        for(int i = 0; i < n2; i++) B[i] = in.nextInt();
+
+        System.out.println("Новая неубывающая последовательность:");
+
+        int i = 0, j=0;
+        while (i != n1 && j != n2){
+            if (A[i] <= B[j]){
+                System.out.print(A[i] + " ");
+                i++;
+            }
+            else if (A[i] > B[j]){
+                System.out.print(B[j] + " ");
+                j++;
+            }
+
+            if (i == n1){
+                while (j != n2){
+                    System.out.print(B[j] + " ");
+                    j++;
+                }
+            }
+            else if (j == n2){
+                while (i != n1){
+                    System.out.print(A[i] + " ");
+                    i++;
+                }
+            }
+        }
+    }
+}
