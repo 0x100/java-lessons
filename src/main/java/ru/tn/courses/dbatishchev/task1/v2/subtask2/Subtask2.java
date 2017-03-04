@@ -1,11 +1,11 @@
-package ru.tn.courses.dbatishchev.task1;
+package ru.tn.courses.dbatishchev.task1.v2.subtask2;
 
 import java.util.Random;
 
 /**
  * Created by ii343hbka on 01/03/2017.
  */
-public class Exercise2 {
+public class Subtask2 {
     class Bank {
         private String name;
         private double conversRate;
@@ -30,7 +30,7 @@ public class Exercise2 {
     public static void main(String[] args) {
         System.out.println("trying to guess the best bank for USDtoRUR conversion");
 
-        Bank[] banks = new Exercise2().banks;
+        Bank[] banks = new Subtask2().banks;
         double bestConversRate = banks[0].conversRate;
         String bestBankName = banks[0].name;
         for (int i = 1; i < banks.length; i++) {

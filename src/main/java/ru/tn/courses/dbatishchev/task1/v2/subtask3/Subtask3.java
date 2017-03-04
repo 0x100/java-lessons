@@ -1,9 +1,11 @@
-package ru.tn.courses.dbatishchev.task1;
+package ru.tn.courses.dbatishchev.task1.v2.subtask3;
+
+import ru.tn.courses.dbatishchev.task1.v2.Aux;
 
 /**
  * Created by ii343hbka on 01/03/2017.
  */
-public class Exercise3 {
+public class Subtask3 {
     public static void main(String[] args) {
         int[] intSeq = Aux.randomIntSequence(10, -100, 100);
 

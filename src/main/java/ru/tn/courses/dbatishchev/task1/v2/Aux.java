@@ -1,4 +1,4 @@
-package ru.tn.courses.dbatishchev.task1;
+package ru.tn.courses.dbatishchev.task1.v2;
 
 import java.util.Random;
 
