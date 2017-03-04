@@ -5,7 +5,7 @@ import ru.tn.courses.dbatishchev.task1.v2.Aux;
 /**
  * Created by ii343hbka on 01/03/2017.
  */
-public class Subtask3 {
+public class Main {
     public static void main(String[] args) {
         int[] intSeq = Aux.randomIntSequence(10, -100, 100);
 

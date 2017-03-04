@@ -8,7 +8,7 @@ import java.util.List;
 /**
  * Created by ii343hbka on 01/03/2017.
  */
-public class Subtask1 {
+public class Main {
 
     private static final long seqSize = 100;
     private static final int seqLowBound = 0;

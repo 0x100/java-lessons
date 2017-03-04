@@ -5,7 +5,7 @@ import java.util.Random;
 /**
  * Created by ii343hbka on 01/03/2017.
  */
-public class Subtask2 {
+public class Main {
     class Bank {
         private String name;
         private double conversRate;
@@ -30,7 +30,7 @@ public class Subtask2 {
     public static void main(String[] args) {
         System.out.println("trying to guess the best bank for USDtoRUR conversion");
 
-        Bank[] banks = new Subtask2().banks;
+        Bank[] banks = new Main().banks;
         double bestConversRate = banks[0].conversRate;
         String bestBankName = banks[0].name;
         for (int i = 1; i < banks.length; i++) {
