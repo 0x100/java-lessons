@@ -61,6 +61,11 @@ Student projects for Java courses
 | Max Grebnev         | 4 |
 | Sergey Rostov       | 3 |
 | Дроник Виталик      | 5 |
+| Жолумский Кирилл    | 2 |
+| Тихомиров Павел     | 1 |
+
+
+
 
 # Список ЛР:
 - [Лабораторная работа №1](https://github.com/0x100/java-lessons/wiki/task1)
