@@ -64,6 +64,7 @@ Student projects for Java courses
 | Жолумский Кирилл    | 2 |
 | Тихомиров Павел     | 1 |
 | Козырев Егор        | 4 |
+| Victoria Pavlikova  | 3 |
 
 
 
