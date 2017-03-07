@@ -1,5 +1,7 @@
 package ru.tn.courses.vlysykh.task1.v3.subtask2;
 
+import java.util.Random;
+
 /**
  * Created by Владимир on 04.03.2017.
  */
@@ -96,6 +98,13 @@ public class Lock {
             this.cube[i].showEdge();
         }
         System.out.println();
+    }
+
+    public static int rndEdge(){
+        Random rnd = new Random();
+        int i = 6;
+        i=rnd.nextInt(i)+1;
+        return i;
     }
 }
 
