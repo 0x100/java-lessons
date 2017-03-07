@@ -65,6 +65,7 @@ Student projects for Java courses
 | Тихомиров Павел     | 1 |
 | Козырев Егор        | 4 |
 | Victoria Pavlikova  | 3 |
+| Максим Изварин      | 5 |
 
 
 
