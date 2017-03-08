@@ -17,18 +17,13 @@ public class Lock {
         this.cube = cube;
     }
 
-    public void setHacked(boolean hacked) {
-        isHacked = hacked;
-    }
-
     public void setCubeEdge(int edge, int cube) {
         this.cube[cube].setEdge(edge);
-        this.cube[cube].setUsage(true);
+        this.cube[cube].setIsSet(true);
     }
 
-
     public void openTheLock(int position) {
-        if (!this.cube[position].isUsage()) {
+        if (!this.cube[position].isUsage() && !this.cube[position].isSet()) {
             for (int i=1; i<7;i++) {
                 roll2Cube(i, position);
             }
@@ -36,14 +31,10 @@ public class Lock {
             int i=this.cube[position].getEdge();
             roll2Cube(i,position);
         }
-
-        if(!this.isHacked){
-            System.out.println("Замок не открыт!");
-        }
-
     }
+
     public void roll2Cube(int i, int position) {
-        if (!this.cube[position+1].isUsage()) {
+        if (!this.cube[position+1].isUsage() && !this.cube[position+1].isSet()) {
             for (int j = 1; j < 7; j++) {
                 roll3Cube(i,j,position);
             }
@@ -54,7 +45,7 @@ public class Lock {
     }
 
     public void roll3Cube(int i, int j, int position) {
-        if (!this.cube[position+2].isUsage()) {
+        if (!this.cube[position+2].isUsage() && !this.cube[position+2].isSet()) {
             for (int k = 1; k < 7; k++) {
                 lockOpen(i,j,k,position);
             }
@@ -72,24 +63,33 @@ public class Lock {
             this.cube[position+1].setUsage(true);
             this.cube[position+2].setEdge(k);
             this.cube[position+2].setUsage(true);
-
             position++;
             if (position<this.cube.length-2) {
                 openTheLock(position);
             } else {
                 print();
-                System.out.println("Замок открыт!");
-                System.out.println();
                 this.isHacked=true;
             }
+        } else {
+            this.cube[position].setUsage(false);
+            this.cube[position+1].setUsage(false);
+            this.cube[position+2].setUsage(false);
         }
-
     }
+
     public boolean isOpen(int i,int j,int k){
         if (i + j + k == 10){
             return true;
         } else {
             return false;
+        }
+    }
+
+    public void lockIsOpen(){
+        if(this.isHacked){
+            System.out.println("Замок открыт!");
+        } else {
+            System.out.println("Замок не открыт!");
         }
     }
 
@@ -104,6 +104,13 @@ public class Lock {
         Random rnd = new Random();
         int i = 6;
         i=rnd.nextInt(i)+1;
+        return i;
+    }
+
+    public static int rndCube(){
+        Random rnd = new Random();
+        int i = 10;
+        i=rnd.nextInt(i);
         return i;
     }
 }

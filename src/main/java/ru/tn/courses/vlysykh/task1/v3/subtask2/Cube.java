@@ -6,6 +6,7 @@ package ru.tn.courses.vlysykh.task1.v3.subtask2;
 public class Cube {
     private int edge;
     private boolean usage;
+    private boolean isSet;
 
     public Cube(int edge) {
         if (goodCube(edge)) {
@@ -17,6 +18,10 @@ public class Cube {
 
     public void setUsage(boolean usage) {
         this.usage = usage;
+    }
+
+    public void setIsSet(boolean set) {
+        isSet = set;
     }
 
     public void setEdge(int edge) {
@@ -38,6 +43,10 @@ public class Cube {
 
     public boolean isUsage() {
         return usage;
+    }
+
+    public boolean isSet() {
+        return isSet;
     }
 
     public boolean goodCube(int edge) {
