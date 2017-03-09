@@ -12,31 +12,27 @@ public class Main {
         int b = in.nextInt() * 100;//переводим высоту дерева в сантиметры
         System.out.println("Введите расстояние от улитки до земли (в сантиметрах)...");
         int a = in.nextInt();
-        int s = a;
         int arr[] = new int[30];
         Random rand = new Random();
-
-        for (int i = 0; i < arr.length; i++) {//создаем массив из 0 и 1
-            arr[i] = rand.nextInt(2);//0 - пасмурный день, 1 - солнечный
-        }
-
-        if (b<a) System.out.println("Ошибка!");
-        else {
-
         for (int i = 0; i < arr.length; i++) {
-            if (arr[i] == 0 & s>=1) {
-                s = s-1;
-            } else if (arr[i] == 1 & s<b) {
-                s = s+1;
-                if (s<b) {
-                    s=s+1;
-                }
-            }
+            arr[i] = rand.nextInt(2);
         }
-        System.out.println("Улитка находится в "+s+" сантиметрах над землей");
+        int up = 2;
+        int down = 1;
+        for (int i = 0; i < arr.length; i++) {
+
+            if (arr[i] == 1) {
+                if ((a+up)>b) a=b;
+                else a = a+ up;
+            }
+            else if (a!=0) a = a - down;
+        }
+        for (int l=0; l<arr.length; l++) {
+        System.out.println(arr[l]);}
+        System.out.println("Улитка находится в "+a+" сантиметрах над землей");
         in.close();
         }
     }
-}
+
 
 
