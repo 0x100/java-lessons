@@ -62,10 +62,11 @@ public class Main {
                 engaged[1] = pos;
                 arr[pos] = cube2;
             }
-            while (SIZE - cube1 - cube2 < 6);
+            while (!(1 <= SIZE - cube1 - cube2 && SIZE - cube1 - cube2 <= 6));
             hackLock = Math.abs(engaged[0] - engaged[1]) == 0 || Math.abs(engaged[0] - engaged[1]) == 1 || Math.abs(engaged[0] - engaged[1]) % 4 == 0;
         }
         while (!hackLock);
+        System.out.println(SIZE - cube1 - cube2);
         return arr;
     }
 
