@@ -12,7 +12,7 @@ public class Lock {
     public Lock(int size) {
         Cube[] cube = new Cube[size];
         for (int i=0; i<size; i++){
-            cube[i] = new Cube(1);
+            cube[i] = new Cube(0);
         }
         this.cube = cube;
     }

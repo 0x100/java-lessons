@@ -50,7 +50,7 @@ public class Cube {
     }
 
     public boolean goodCube(int edge) {
-        if (edge>0&&edge<7) {
+        if (edge<7) {
             return true;
         }
             else {
