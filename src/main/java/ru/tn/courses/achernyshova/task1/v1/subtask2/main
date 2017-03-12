@@ -6,20 +6,18 @@ public class Queue {
 
         System.out.println("Введите количество человек в очереди");
         int n = in.nextInt();
-        int t[] = new int[n];
-        int C[] = new int[n];
+        int time[] = new int[n];
+        int waiting = 0;
 
-        System.out.println("Введите время обслуживания для каждого из " n " 
+        System.out.println("Введите время обслуживания для каждого из " + n + " покупателей");
+        for(int i = 0; i < n; i++) time[i] = in.nextInt();
 
-покупателей");
-        for(int i = 0; i < n; i++) t[i] = in.nextInt();
-
-        for(int i = 1; i < n; i++) {
-            C[i] = C[i - 1] + t[i - 1];
-        }
         System.out.println("Введите номер нужного покупателя");
         int c = in.nextInt();
 
-        System.out.print("Время ожидания для данного покупателя равно " C[c - 1]);
+        for(int i = 0; i < c - 1; i++)
+            waiting += time[i];
+
+        System.out.print("Время ожидания для данного покупателя равно " + waiting);
     }
 }
