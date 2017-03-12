@@ -31,40 +31,26 @@ public class Main {
                 System.out.println("Миша, все фигня, давай по новой");
             else {
 
-                switch (it1) {
+                switch (group1) {
                     case 0:
-                    case 3:
-                    case 6:
-                    case 9:
                         first = masNumber[it1];
                         break;
                     case 1:
-                    case 4:
-                    case 7:
                         second = masNumber[it1];
                         break;
                     case 2:
-                    case 5:
-                    case 8:
                         third = masNumber[it1];
                         break;
                 }
 
-                switch (it2) {
+                switch (group2) {
                     case 0:
-                    case 3:
-                    case 6:
-                    case 9:
                         first = masNumber[it2];
                         break;
                     case 1:
-                    case 4:
-                    case 7:
                         second = masNumber[it2];
                         break;
                     case 2:
-                    case 5:
-                    case 8:
                         third = masNumber[it2];
                         break;
                 }
@@ -74,8 +60,9 @@ public class Main {
                     second = 10 - first - third;
                 else third = 10 - first - second;
 
-                System.out.println(first + " " + second + " " + third + " " + first + " " + second + " " + third + " " +
-                        first + " " + second + " " + third + " " + first);
+                for (int i = 0; i < 3; i++)
+                System.out.print(first + " " + second + " " + third + " " );
+                System.out.println(first);
 
 
             }
