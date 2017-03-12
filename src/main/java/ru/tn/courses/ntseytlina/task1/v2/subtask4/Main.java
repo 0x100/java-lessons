@@ -27,10 +27,7 @@ public class Main {
 
     private static Map findMostFrequentString () {
         Map<String, Integer> substrings = new LinkedHashMap<>();
-        Set<String> mostFrequentKeys = new HashSet<>();
         Map<String, Integer> mostFrequentStrings = new LinkedHashMap<>();
-
-        int numberOfSubstrings = 0;
 
         for (int i = 2; i < string.length(); i++) {
             for (int j = i; j < string.length() + 1; j++) {
@@ -43,19 +40,17 @@ public class Main {
             }
         }
 
+        int numberOfSubstrings = 0;
         int length = 0;
         for (String key : substrings.keySet()) {
             if (substrings.get(key) > numberOfSubstrings) {
                 numberOfSubstrings = substrings.get(key);
-                mostFrequentKeys.clear();
-                mostFrequentKeys.add(key);
                 mostFrequentStrings.clear();
                 mostFrequentStrings.put(key, substrings.get(key));
                 if (length < key.length()) {
                     length = key.length();
                 }
             } else if (substrings.get(key) == numberOfSubstrings) {
-                mostFrequentKeys.add(key);
                 mostFrequentStrings.put(key, substrings.get(key));
                 if (length < key.length()) {
                     length = key.length();
@@ -63,7 +58,9 @@ public class Main {
             }
         }
 
-        for (String key : mostFrequentKeys) {
+        Set<String> keys = new HashSet<>(mostFrequentStrings.keySet());
+
+        for (String key : keys) {
             if (key.length() < length) {
                 mostFrequentStrings.remove(key);
             }
