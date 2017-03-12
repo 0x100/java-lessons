@@ -4,6 +4,7 @@ package ru.tn.courses.vlysykh.task1.v3.subtask2;
  * Created by Владимир on 04.03.2017.
  */
  class Cube {
+    public static final int EDGE_COUNT = 6;
     private int edge;
     private boolean usage;
     private boolean isSet;
@@ -50,7 +51,7 @@ package ru.tn.courses.vlysykh.task1.v3.subtask2;
     }
 
      boolean goodCube(int edge) {
-        if (edge<7) {
+        if (edge<EDGE_COUNT+1) {
             return true;
         }
             else {

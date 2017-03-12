@@ -7,28 +7,29 @@ import java.util.Random;
  */
 public class Lock {
     private static final int SIZE = 10;
+    private static final int START_POSITION = 0;
+    public static final int REQUIREMENT = 10;
+    private static final boolean PRESET = true;
     private Cube[] cube;
     private boolean isHacked;
 
     public Lock() {
-        Cube[] cube = new Cube[SIZE];
+       this(SIZE);
+    }
 
-        for (int i=0; i<SIZE; i++){
-            cube[i] = new Cube(0);
+    public Lock(int size) {
+        Cube[] cube = new Cube[size];
+
+        for (int i=0; i<size; i++){
+            cube[i] = new Cube(START_POSITION);
         }
-        int rndCube1 = rndCube();
-        int rndCube2 = rndCube();
         this.cube = cube;
 
-        while (rndCube1==rndCube2){
-            rndCube2 = rndCube();
+        if (PRESET) {
+            preSet(size);
+            this.cube = cube;
         }
-        cube[rndCube1].setEdge(rndEdge());
-        cube[rndCube1].setIsSet(true);
-        cube[rndCube2].setEdge(rndEdge());
-        cube[rndCube2].setIsSet(true);
 
-        this.cube = cube;
     }
 
     public void print() {
@@ -36,25 +37,16 @@ public class Lock {
             this.cube[i].showEdge();
         }
         System.out.println();
-        System.out.println();
     }
 
     public void openTheLock() {
-        if (!this.cube[0].isUsage() && !this.cube[0].isSet()) {
-            for (int i=1; i<7;i++) {
-                roll2Cube(i, 0);
-            }
-        } else {
-            int i=this.cube[0].getEdge();
-            roll2Cube(i,0);
-        }
-        lockIsOpen();
+       openTheLock(START_POSITION);
+       lockIsOpen();
     }
-
 
     private void openTheLock(int position) {
         if (!this.cube[position].isUsage() && !this.cube[position].isSet()) {
-            for (int i=1; i<7;i++) {
+            for (int i=1; i<getValidEdge();i++) {
                 roll2Cube(i, position);
             }
         } else {
@@ -65,7 +57,7 @@ public class Lock {
 
     private void roll2Cube(int i, int position) {
         if (!this.cube[position+1].isUsage() && !this.cube[position+1].isSet()) {
-            for (int j = 1; j < 7; j++) {
+            for (int j = 1; j < getValidEdge(); j++) {
                 roll3Cube(i,j,position);
             }
         } else {
@@ -76,7 +68,7 @@ public class Lock {
 
     private void roll3Cube(int i, int j, int position) {
         if (!this.cube[position+2].isUsage() && !this.cube[position+2].isSet()) {
-            for (int k = 1; k < 7; k++) {
+            for (int k = 1; k < getValidEdge(); k++) {
                 lockOpen(i,j,k,position);
             }
         } else {
@@ -108,7 +100,7 @@ public class Lock {
     }
 
     private boolean isOpen(int i,int j,int k){
-        if (i + j + k == 10){
+        if (i + j + k == REQUIREMENT){
             return true;
         } else {
             return false;
@@ -122,19 +114,30 @@ public class Lock {
             System.out.println("Замок не открыт!");
         }
     }
+    private void preSet (int size){
+        int rndCube1 = rndCube(size);
+        int rndCube2 = rndCube(size);
+        while (rndCube1==rndCube2){
+            rndCube2 = rndCube(size);
+        }
+        cube[rndCube1].setEdge(rndEdge());
+        cube[rndCube1].setIsSet(true);
+        cube[rndCube2].setEdge(rndEdge());
+        cube[rndCube2].setIsSet(true);
+    }
 
     private int rndEdge(){
         Random rnd = new Random();
-        int i = 6;
-        i=rnd.nextInt(i)+1;
-        return i;
+        return rnd.nextInt(getValidEdge()-1)+1;
     }
 
-    private int rndCube(){
+    private int rndCube(int size){
         Random rnd = new Random();
-        int i = 10;
-        i=rnd.nextInt(i);
-        return i;
+        return rnd.nextInt(size);
+    }
+    
+    private int getValidEdge(){
+        return (this.cube[START_POSITION].EDGE_COUNT)+1;
     }
 }
 
