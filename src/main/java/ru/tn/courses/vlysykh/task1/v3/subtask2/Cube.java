@@ -3,12 +3,12 @@ package ru.tn.courses.vlysykh.task1.v3.subtask2;
 /**
  * Created by Владимир on 04.03.2017.
  */
-public class Cube {
+ class Cube {
     private int edge;
     private boolean usage;
     private boolean isSet;
 
-    public Cube(int edge) {
+     Cube(int edge) {
         if (goodCube(edge)) {
             this.edge = edge;
         } else {
@@ -16,15 +16,15 @@ public class Cube {
         }
     }
 
-    public void setUsage(boolean usage) {
+     void setUsage(boolean usage) {
         this.usage = usage;
     }
 
-    public void setIsSet(boolean set) {
+    void setIsSet(boolean set) {
         isSet = set;
     }
 
-    public void setEdge(int edge) {
+    void setEdge(int edge) {
         if (goodCube(edge)){
             this.edge = edge;
         } else {
@@ -33,23 +33,23 @@ public class Cube {
 
     }
 
-    public int getEdge() {
+    int getEdge() {
         return edge;
     }
 
-    public void showEdge() {
+    void showEdge() {
         System.out.print(" "+ this.edge);
     }
 
-    public boolean isUsage() {
+    boolean isUsage() {
         return usage;
     }
 
-    public boolean isSet() {
+    boolean isSet() {
         return isSet;
     }
 
-    public boolean goodCube(int edge) {
+     boolean goodCube(int edge) {
         if (edge<7) {
             return true;
         }
