@@ -1,4 +1,4 @@
-/**
+package ru.tn.courses.mgrebnev.task1.v4.subtask3; /**
  * Created by Max on 01.03.2017.
  */
 import java.util.Random;

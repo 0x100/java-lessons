@@ -1,3 +1,5 @@
+package ru.tn.courses.mgrebnev.task1.v4.subtask1;
+
 import java.util.Random;
 
 /**

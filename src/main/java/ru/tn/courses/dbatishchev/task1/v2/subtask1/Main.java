@@ -1,9 +1,8 @@
 package ru.tn.courses.dbatishchev.task1.v2.subtask1;
 
-import ru.tn.courses.dbatishchev.task1.v2.Aux;
+import ru.tn.courses.dbatishchev.task1.v2.RandomArrayInitializer;
 
 import java.util.Arrays;
-import java.util.List;
 
 /**
  * Created by ii343hbka on 01/03/2017.
@@ -15,7 +14,7 @@ public class Main {
     private static final int seqUpperBound = 10;
 
     public static void main(String[] args) {
-        int[] intSeq = Aux.randomIntSequence(seqSize, seqLowBound, seqUpperBound);
+        int[] intSeq = RandomArrayInitializer.randomIntSequence(seqSize, seqLowBound, seqUpperBound);
         int[] zeroElemIndices = new int[intSeq.length];
 
         int zIdx = 0;
