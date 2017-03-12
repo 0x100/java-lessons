@@ -1,4 +1,4 @@
-package task1.prob1;
+package task1.v4.subtask3;
 
 import java.util.Arrays;
 import java.util.Random;
@@ -8,20 +8,25 @@ import java.util.Random;
  */
 public class Main {
 
-    private static int[ ] arr;
-    private static final int SIZE = 10;
-    private static boolean flag = true;
+    private static int arr[];
+    private static int SIZE = 15;
 
     public static void main(String[] args) {
         arrInit();
-        for (int i = 0; i < arr.length - 1; i++) {
-            if(arr[i] > arr[i+1]){
-                flag = false;
-                break;
-            }
-        }
         System.out.println(Arrays.toString(arr));
-        System.out.println("Incr?: " + flag );
+
+        for(int i = 1; i < arr.length; i++){
+            int curr = arr[i];
+            int j = i-1;
+            while(j >= 0 && arr[j] > curr){
+                arr[j+1] = arr[j];
+                j--;
+            }
+            arr[j+1] = curr;
+        }
+
+        System.out.println(Arrays.toString(arr));
+
     }
 
     private static void arrInit(){

@@ -1,4 +1,4 @@
-package task1.prob2;
+package task1.v4.subtask2;
 
 import java.util.Random;
 
