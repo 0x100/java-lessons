@@ -1,26 +1,34 @@
 package ru.tn.courses.mmaters.task1.v4.subtask1;
 
 import java.util.Arrays;
+import java.util.Random;
 
 public class Main {
 
     public static void main(String[] args) {
+
+        int number = 5;
+        Random random = new Random();
+        int[] arr = new int[number];
+        for (int i = 0; i < arr.length; i++)
+            arr[i] = random.nextInt(20);
+
+        System.out.println(Arrays.toString(arr));
+        System.out.println("Массив возрастающий? " + check(arr));
+    }
+
+     private static boolean check(int[] arr){
         boolean bool = true;
-        int k = 7;
-        int n = 37;
-        int[] mas = new int[k];
 
-        for (int i = 0; i < mas.length; i++)
-            mas[i] = (int) (Math.random() * n);
+        for (int i = 0; i < arr.length - 1; i++) {
 
-        for (int i = 0; i < mas.length - 1; i++) {
-
-            if (mas[i] > mas[i + 1]) {
+            if (arr[i] > arr[i + 1]) {
                 bool = false;
                 break;
             }
+
         }
-        System.out.println(Arrays.toString(mas));
-        System.out.println("Массив возрастающий? " + bool);
+        return bool;
+
     }
 }
