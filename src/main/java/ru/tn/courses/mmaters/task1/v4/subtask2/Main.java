@@ -7,14 +7,14 @@ public class Main {
     public static void main(String[] args) {
 
         int n = 33;
-        int[] mas = new int[n];
+        int[] arr = new int[n];
 
-        for (int i = 0; i < mas.length; i++ )
-            mas[i] = (int) (Math.random() * n);
+        for (int i = 0; i < arr.length; i++ )
+            arr[i] = (int) (Math.random() * n);
 
-        for (int i = 1; i < mas.length; i *= 2)
-            System.out.println(i + " элемент = " + mas[i]);
-        System.out.println("Массив:\n" + Arrays.toString(mas));
+        for (int i = 1; i < arr.length; i *= 2)
+            System.out.println(i + " элемент = " + arr[i]);
+        System.out.println("Массив:\n" + Arrays.toString(arr));
 
     }
 }
