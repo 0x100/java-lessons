@@ -1,4 +1,4 @@
-package ru.tn.courses.task1subtask2v4;
+package ru.tn.courses.mmaters.task1.v4.subtask2;
 
 import java.util.Arrays;
 
