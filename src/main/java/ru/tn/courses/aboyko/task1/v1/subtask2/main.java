@@ -1,22 +1,27 @@
+package ru.tn.courses.aboyko.task1.v1.subtask2;
+
 import java.util.Scanner;
 
-    public static void main(String[] args){
-        Scanner in = new Scanner (System.in);
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
         System.out.println("Введите количество людей в очереди");
         int peopleAmmount = in.nextInt();
-        int [] serviceTime = new int [peopleAmmount];
+        int[] serviceTime = new int[peopleAmmount];
 
         System.out.println("Укажите время ожидания для каждого клиента");
-        for (int i = 0; i < peopleAmmount; i++){
+        for (int i = 0; i < peopleAmmount; i++) {
             serviceTime[i] = in.nextInt();
         }
 
         System.out.println("Введите номер клиента в очереди");
         int clientNumber = in.nextInt();
         int waitingTime = 0;
-        for (int i = 0; i < clientNumber; i++){
+        for (int i = 0; i < clientNumber; i++) {
             waitingTime += serviceTime[i];
         }
-        System.out.print("Время ожидания для клиента под номером " + clientNumber + " = " + waitingTime );
+        System.out.print("Время ожидания для клиента под номером " + clientNumber + " = " + waitingTime);
 
     }
+}
