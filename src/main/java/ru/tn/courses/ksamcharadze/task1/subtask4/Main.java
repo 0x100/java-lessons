@@ -1,4 +1,5 @@
-import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
 
 /**
@@ -22,19 +23,17 @@ public class Main {
         } while (str.length() < minLen);
         System.out.println("Your string: " + str);
 
-
-        int coincidence, bigCoincidence = 0, subStrLen = 2;
         String subStr = new String();
         String bigSubStr = new String();
-        bigSubStr = subStr = str.substring(0, subStrLen);
+        HashMap<String, Integer> strings = new HashMap<>();
 
-        ArrayList<String > strs = new ArrayList<>();
-        ArrayList<Integer> coin = new ArrayList<>();
+        int maxCoin = 0;
+        for (int subStrLen = 2; subStrLen < str.length(); subStrLen++) {
 
-        for (int k = 0; k < str.length() - 2; k++) {
+            int coincidence, bigCoincidence = 0;
+            bigSubStr = subStr = str.substring(0, subStrLen);
 
-            int j = 0;
-            while (j != str.length() - subStr.length()) {
+            for (int j = 0; j < str.length() - subStr.length(); j++ ) {
 
                 coincidence = 0;
                 for (int i = 0; i < str.length() - subStr.length() + 1; i++)
@@ -45,33 +44,26 @@ public class Main {
                     bigCoincidence = coincidence;
                     bigSubStr = subStr;
                 }
-                j++;
                 subStr = str.substring(j, subStrLen + j);
             }
-            strs.add(bigSubStr);
-            coin.add(bigCoincidence);
-            subStrLen++;
-            subStr = str.substring(0, subStrLen);
-            bigSubStr = subStr;
-            bigCoincidence = 0;
+            maxCoin = bigCoincidence;
+            strings.put(bigSubStr, bigCoincidence);
         }
 
-        int j = 0;
-        coincidence = coin.get(j);
-        System.out.println();
-        for (int i = 0; i < str.length() - 2; i++) {
-            System.out.println(strs.get(i) + " - " + coin.get(i));
-            if (coincidence < coin.get(i)) {
-                coincidence = coin.get(i);
-                j = i;
+        System.out.println("\nMax length");
+        for (Map.Entry<String, Integer> string: strings.entrySet()) {
+            System.out.println("    from " + string.getKey().length() + ": " + string.getKey() + " - " + string.getValue());
+            if (maxCoin < string.getValue()) {
+                maxCoin = string.getValue();
+                subStr = string.getKey();
             }
         }
-        subStr = strs.get(j);
-        for (int i = 0; i < str.length() - 2; i++)
-            if (coincidence == coin.get(i) && strs.get(j).length() < strs.get(i).length())
-                j = i;
 
-        System.out.println("\nMore coincidence: " + strs.get(j) + "\nAmount: " + coin.get(j));
+        for (Map.Entry<String, Integer> string: strings.entrySet())
+            if (maxCoin == string.getValue() && subStr.length() < string.getKey().length())
+                subStr = string.getKey();
+
+        System.out.println("\nMore coincidence: " + subStr + "\nAmount: " + strings.get(subStr));
 
     }
 }
