@@ -1,3 +1,5 @@
+package ru.tn.courses.ksamcharadze.task1.v5.subtask1;
+
 /**
  * Created by Коба on 02.03.2017.
  * Вариант 5.

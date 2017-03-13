@@ -1,13 +1,13 @@
 package ru.tn.courses.dbatishchev.task1.v2.subtask3;
 
-import ru.tn.courses.dbatishchev.task1.v2.Aux;
+import ru.tn.courses.dbatishchev.task1.v2.RandomArrayInitializer;
 
 /**
  * Created by ii343hbka on 01/03/2017.
  */
 public class Main {
     public static void main(String[] args) {
-        int[] intSeq = Aux.randomIntSequence(10, -100, 100);
+        int[] intSeq = RandomArrayInitializer.randomIntSequence(10, -100, 100);
 
         for(int i = 0; i < intSeq.length; i++) {
             int maxEl = intSeq[i];
