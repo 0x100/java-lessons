@@ -1,18 +1,20 @@
-package ru.tn.courses.mryabykh.task1.solve1;
+package ru.tn.courses.mryabykh.task1.v1.subtask1;
+
+import ru.tn.courses.mryabykh.utils.ArrayUtils;
 
 /**
  * Author: ryabykh_ms (upstrocker)
  * Email: upstrocker@gmail.com
  * GitHub: https://github.com/upstrocker
- * Variant: 1
  */
 
-public class AdderMain {
+public class Main {
 
     /**
      * Суммирует элементы массива naturalNumbers, кратные multiplicity
+     *
      * @param naturalNumbers - массив натуральных чисел
-     * @param multiplicity - число, которому должны быть кратны элементы массива
+     * @param multiplicity   - число, которому должны быть кратны элементы массива
      * @return сумма элементов, кратных multiplicity, или -1, если массив содержит ненатуральные числа
      */
     private static int summarize(int[] naturalNumbers, int multiplicity) {
@@ -30,6 +32,7 @@ public class AdderMain {
 
     /**
      * Проверяет массив целых чисел на натуральность
+     *
      * @param numbers - массив целых чисел
      * @return - все ли числа в массиве натуральные?
      */
@@ -43,8 +46,9 @@ public class AdderMain {
     }
 
     public static void main(String[] args) {
-        int[] naturalNumbers = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24};
-        int multiplicity = 2;
-        System.out.println(summarize(naturalNumbers, multiplicity));
+        int[] naturalNumbers = ArrayUtils.fillRandomUintArray();
+        ArrayUtils.printArray(naturalNumbers, "Исходный массив:");
+        int multiplicity = 3;
+        System.out.println("Сумма элементов, кратных " + multiplicity + ": " + summarize(naturalNumbers, multiplicity));
     }
 }

@@ -1,4 +1,6 @@
-package ru.tn.courses.mryabykh.task1.solve3;
+package ru.tn.courses.mryabykh.task1.v1.subtask3;
+
+import ru.tn.courses.mryabykh.utils.ArrayUtils;
 
 import java.util.Arrays;
 
@@ -6,13 +8,13 @@ import java.util.Arrays;
  * Author: ryabykh_ms (upstrocker)
  * Email: upstrocker@gmail.com
  * GitHub: https://github.com/upstrocker
- * Variant: 1
  */
 
-public class SorterMain {
+public class Main {
 
     /**
      * Образовывает неубывающую последовательность чисел из двух исходных
+     *
      * @param sequenceA - первая последовательность
      * @param sequenceB - вторая последовательность
      * @return - неубывающая последовательность чисел
@@ -28,8 +30,10 @@ public class SorterMain {
     }
 
     public static void main(String[] args) {
-        int[] a = {1, 3, 4, 6, 7, 8, 9, 10, 12, 13, 29};
-        int[] b = {2, 5, 11, 23, 24, 25, 26, 27, 28, 30};
-        System.out.println(Arrays.toString(sortDoubleSequences(a, b)));
+        int[] a = ArrayUtils.fillRandomIntArray();
+        int[] b = ArrayUtils.fillRandomIntArray();
+        ArrayUtils.printArray(a, "Исходный массив A:");
+        ArrayUtils.printArray(b, "Исходный массив B:");
+        ArrayUtils.printArray(sortDoubleSequences(a, b), "Неубывающая последовательность из массивов A и B:");
     }
 }
