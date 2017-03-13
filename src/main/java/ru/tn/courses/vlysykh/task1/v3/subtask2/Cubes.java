@@ -6,7 +6,7 @@ package ru.tn.courses.vlysykh.task1.v3.subtask2;
  class Cubes {
     public static final int EDGE_COUNT = 6;
     private int edge;
-    private boolean usage;
+    private boolean isUsage;
     private boolean isSet;
 
      Cubes(int edge) {
@@ -18,7 +18,7 @@ package ru.tn.courses.vlysykh.task1.v3.subtask2;
     }
 
      void setUsage(boolean usage) {
-        this.usage = usage;
+        this.isUsage = usage;
     }
 
     void setIsSet(boolean set) {
@@ -42,7 +42,7 @@ package ru.tn.courses.vlysykh.task1.v3.subtask2;
     }
 
     boolean isUsage() {
-        return usage;
+        return isUsage;
     }
 
     boolean isSet() {
