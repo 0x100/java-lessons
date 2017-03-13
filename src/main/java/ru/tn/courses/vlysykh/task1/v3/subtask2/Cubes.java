@@ -3,14 +3,14 @@ package ru.tn.courses.vlysykh.task1.v3.subtask2;
 /**
  * Created by Владимир on 04.03.2017.
  */
- class Cube {
+ class Cubes {
     public static final int EDGE_COUNT = 6;
     private int edge;
     private boolean usage;
     private boolean isSet;
 
-     Cube(int edge) {
-        if (goodCube(edge)) {
+     Cubes(int edge) {
+        if (isGoodCube(edge)) {
             this.edge = edge;
         } else {
             throw new IllegalArgumentException("It's not a cube!@@x##@!!");
@@ -26,12 +26,11 @@ package ru.tn.courses.vlysykh.task1.v3.subtask2;
     }
 
     void setEdge(int edge) {
-        if (goodCube(edge)){
+        if (isGoodCube(edge)){
             this.edge = edge;
         } else {
             throw new IllegalArgumentException("It's not a cube!@@x##@!!");
         }
-
     }
 
     int getEdge() {
@@ -50,13 +49,7 @@ package ru.tn.courses.vlysykh.task1.v3.subtask2;
         return isSet;
     }
 
-     boolean goodCube(int edge) {
-        if (edge<EDGE_COUNT+1) {
-            return true;
-        }
-            else {
-                return false;
-            }
-
+     boolean isGoodCube(int edge) {
+         return edge<EDGE_COUNT+1;
     }
 }
