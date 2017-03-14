@@ -24,14 +24,14 @@ public class Main {
         int index;
 
         // Пока количсетво символов искомой подстроки меньше длины самой строки
-        while (offset < string.length()) {
+        while (offset <= string.length()) {
             // проходимся по всей строке и выбираем подстроку длиной offset
-            for (int i = offset; i < string.length(); i++) {
-                substring = string.substring(i - offset, i + 1);
+            for (int i = offset; i < string.length() + 1; i++) {
+                substring = string.substring(i - offset, i);
                 frequency = 0;
 
                 // Ищем подстроку в строке, начиная с символа с индексом j
-                for (int j = i - offset; j < string.length(); j = index + 1) {
+                for (int j = i - offset; j < string.length(); j = index + offset) {
                     index = string.indexOf(substring, j);
                     if (index != -1) {
                         frequency++;
@@ -73,8 +73,9 @@ public class Main {
 
     public static void main(String[] args) {
 //        String string = "ababscscscsbabababscscsuiuiuibacscsui";
+//        String string = "домкубдомкубдомкуб";
 //        String string = "дом";
-        String string = "домкубдомкубдомкуб";
+        String string = "abaabcagagagaabcaua";
         String substring = findFrequentSubstring(string);
         int frequency = getSubstringFrequency(string, substring);
         System.out.println("Исходная строка: " + string);
