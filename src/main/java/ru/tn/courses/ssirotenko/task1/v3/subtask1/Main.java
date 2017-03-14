@@ -20,8 +20,8 @@ public class Main {
         getFirstNumber(array);
     }
 
-    private static void getFirstNumber(int[] array) {
-        for (int anArray : array) {
+    private static void getFirstNumber(int[] ints) {
+        for (int anArray : ints) {
             if (anArray > 0) {
                 System.out.println("Раньше – положительное");
                 break;

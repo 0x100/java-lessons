@@ -42,35 +42,35 @@ public class Main {
         return initialArray;
     }
 
-    private static void getCode(int[] array) {
+    private static void getCode(int[] ints) {
         int indexDice1 = 0;
         int indexDice2 = 0;
+        int sum;
+        int[] tmp = new int[3];
 
-        for (int i = 0; i < array.length; i++) {
-            if (array[indexDice1] == 0) {
+        for (int i = 0; i < ints.length; i++) {
+            if (ints[indexDice1] == 0) {
                 indexDice1 = i;
-            } else if (array[indexDice1] > 0 && array[i] > 0) {
+            } else if (ints[indexDice1] > 0 && ints[i] > 0) {
                 indexDice2 = i;
             }
         }
 
-        int sum = array[indexDice1] + array[indexDice2] ;
+        sum = ints[indexDice1] + ints[indexDice2] ;
 
-        int[] tmp = new int[3];
-        tmp[0] = array[indexDice1];
-        tmp[1] = array[indexDice2];
+        tmp[0] = ints[indexDice1];
+        tmp[1] = ints[indexDice2];
         tmp[2] = SIZE - sum;
 
         if (sum >= MIN_SUM && sum <= MAX_SUM) {
-            for (int i = 0; i < array.length; i++) {
-                if (array[i] == 0) {
-                    array[i] = tmp[i % 3];
+            for (int i = 0; i < ints.length; i++) {
+                if (ints[i] == 0) {
+                    ints[i] = tmp[i % 3];
                 }
             }
-            System.out.println(Arrays.toString(array));
+            System.out.println(Arrays.toString(ints));
         } else {
-            System.out.println("Ошибка доступа, попробуйте еще раз.");
+            System.out.println("Ошибка доступа, попробуйте еще раз");
         }
     }
-
 }
