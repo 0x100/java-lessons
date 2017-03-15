@@ -27,14 +27,15 @@ public class SuperString {
 
             for (int prefixSize = START_PREFIX_SIZE; prefixSize <= superStringLength - stringPosition; prefixSize++) {
                 prefix = superString.substring(stringPosition, stringPosition + prefixSize);
-                count = position = 0;
-
+               count = position = 0;
                 while (position < superStringLength) {
                     subString = superString.substring(position, superStringLength);
                     if (subString.startsWith(prefix)) {
                         count++;
+                        position += prefix.length();
+                    } else {
+                        position++;
                     }
-                    position++;
                 }
                 if (count > maxCount) {
                     maxCount = count;

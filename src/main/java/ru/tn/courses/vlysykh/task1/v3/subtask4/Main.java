@@ -5,7 +5,7 @@ package ru.tn.courses.vlysykh.task1.v3.subtask4;
  */
 public class Main {
     public static void main(String[] args) {
-        SuperString s1 = new SuperString("Хаски ест колбаски");
+        SuperString s1 = new SuperString("Морж ест корж");
         s1.searchMaxPrefix();
     }
 }
