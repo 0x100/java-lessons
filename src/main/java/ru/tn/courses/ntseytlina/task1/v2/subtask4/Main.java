@@ -23,10 +23,7 @@ public class Main {
     }
 
     private static List findMostFrequentString () {
-        List<String> substringKeys = new ArrayList<>();
-        List<Integer> substringFrequency = new ArrayList<>();
-
-        List<String> mostFrequentStrings = new ArrayList<>();
+        List<String> substrings = new ArrayList<>();
 
         int numberOfSubstrings = 0;
         int length = 0;
@@ -34,43 +31,38 @@ public class Main {
         for (int i = 2; i < string.length(); i++) {
             for (int j = i; j < string.length() + 1; j++) {
                 String key = string.substring(j - i, j);
-                if (substringKeys.contains(key)) {
-                    int index = substringKeys.indexOf(key);
-                    substringKeys.set(index, key);
-                    substringFrequency.set(index, substringFrequency.get(index) + 1);
-                } else {
-                    substringKeys.add(key);
-                    substringFrequency.add(1);
+                int index = 0;
+                int frequency = 0;
+                while (index != -1) {
+                    index = string.indexOf(key, index);
+                    if (index != -1) {
+                        frequency++;
+                        index += key.length();
+                    }
+                }
+
+                if (!substrings.contains(key)) {
+                    if (numberOfSubstrings < frequency) {
+                        numberOfSubstrings = frequency;
+                        length = 0;
+                        substrings.clear();
+                        substrings.add(key);
+                    } else if (numberOfSubstrings == frequency) {
+                        if (key.length() > length) {
+                            length = key.length();
+                            substrings.clear();
+                            substrings.add(key);
+                        } else if (key.length() == length) {
+                            substrings.add(key);
+                        }
+                    }
                 }
             }
         }
 
-        for (String key : substringKeys) {
-            int index = substringKeys.indexOf(key);
-            if (substringFrequency.get(index) > numberOfSubstrings) {
-                numberOfSubstrings = substringFrequency.get(index);
-                mostFrequentStrings.clear();
-                mostFrequentStrings.add(key);
-                length = key.length();
-            } else if (substringFrequency.get(index) == numberOfSubstrings) {
-                mostFrequentStrings.add(key);
-                if (length < key.length()) {
-                    length = key.length();
-                }
-            }
-        }
+        substrings.add("Frequency = " + numberOfSubstrings);
 
-        List<String> keys = new ArrayList<>(mostFrequentStrings);
-
-        for (String key : keys) {
-            if (key.length() < length) {
-                mostFrequentStrings.remove(key);
-            }
-        }
-
-        mostFrequentStrings.add("Frequency = " + numberOfSubstrings);
-
-        return mostFrequentStrings;
+        return substrings;
     }
 
 }
