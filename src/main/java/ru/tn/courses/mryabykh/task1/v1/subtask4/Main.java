@@ -86,7 +86,7 @@ public class Main {
             substring = getFrequentSubstring();
             frequency = getFrequencyOfSubstring();
             System.out.println("Исходная строка: " + string);
-            System.out.println("Часто встречаеая подстрока: " + substring);
+            System.out.println("Часто встречаемая подстрока: " + substring);
             System.out.println("Количество вхождений подстроки: " + frequency);
             System.out.println();
         }
