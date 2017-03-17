@@ -28,7 +28,7 @@ public class Main {
         int numberOfSubstrings = 0;
         int length = 0;
 
-        for (int i = 2; i < string.length(); i++) {
+        for (int i = 2; i < string.length() + 1; i++) {
             for (int j = i; j < string.length() + 1; j++) {
                 String key = string.substring(j - i, j);
                 int index = 0;
