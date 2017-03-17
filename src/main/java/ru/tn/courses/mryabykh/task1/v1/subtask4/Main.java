@@ -1,5 +1,8 @@
 package ru.tn.courses.mryabykh.task1.v1.subtask4;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Author: ryabykh_ms (upstrocker)
  * Email: upstrocker@gmail.com
@@ -9,12 +12,21 @@ package ru.tn.courses.mryabykh.task1.v1.subtask4;
 public class Main {
 
     /**
+     * Часто встречаемая подстрока
+     */
+    private static String frequentSubstring;
+
+    /**
+     * Число вхождений подстроки frequentSubstring в исходной строке
+     */
+    private static int frequencyOfSubstring;
+
+    /**
      * Ищет наиболее часто встречаемую и длинную подстроку в строке
      *
      * @param string - строка, в которой нужно искать подстроку
-     * @return часто встречаемая и самая длинная подстрока
      */
-    private static String findFrequentSubstring(String string) {
+    private static void findFrequentSubstring(String string) {
         int offset = 2;
         String substring;
         String resultSubstring = "";
@@ -47,39 +59,36 @@ public class Main {
             }
             offset++;
         }
-        return resultSubstring;
+        frequentSubstring = resultSubstring;
+        frequencyOfSubstring = resultFrequency;
     }
 
-    /**
-     * Возвращает частоту вхождений подстроки в исходной строке
-     *
-     * @param string    - исходная строка
-     * @param substring - подстрока, для поиска в string
-     * @return частота вхождений substring в string
-     */
-    private static int getSubstringFrequency(String string, String substring) {
-        int frequency = 0;
-        int index;
-        for (int j = 0; j < string.length(); j = index + 1) {
-            index = string.indexOf(substring, j);
-            if (index != -1) {
-                frequency++;
-            } else {
-                break;
-            }
-        }
-        return frequency;
+    private static int getFrequencyOfSubstring() {
+        return frequencyOfSubstring;
+    }
+
+    private static String getFrequentSubstring() {
+        return frequentSubstring;
     }
 
     public static void main(String[] args) {
-//        String string = "ababscscscsbabababscscsuiuiuibacscsui";
-//        String string = "домкубдомкубдомкуб";
-//        String string = "дом";
-        String string = "abaabcagagagaabcaua";
-        String substring = findFrequentSubstring(string);
-        int frequency = getSubstringFrequency(string, substring);
-        System.out.println("Исходная строка: " + string);
-        System.out.println("Часто встречаеая подстрока: " + substring);
-        System.out.println("Количество вхождений подстроки: " + frequency);
+        List<String> testStrings = new ArrayList<>();
+        testStrings.add("ababscscscsbabababscscsuiuiuibacscsui");
+        testStrings.add("домкубдомкубдомкуб");
+        testStrings.add("домкубдомкубдомкуб");
+        testStrings.add("дом");
+        testStrings.add("abaabcagagagaabcaua");
+        testStrings.add("aaaabbbb");
+        String substring;
+        int frequency;
+        for (String string : testStrings) {
+            findFrequentSubstring(string);
+            substring = getFrequentSubstring();
+            frequency = getFrequencyOfSubstring();
+            System.out.println("Исходная строка: " + string);
+            System.out.println("Часто встречаеая подстрока: " + substring);
+            System.out.println("Количество вхождений подстроки: " + frequency);
+            System.out.println();
+        }
     }
 }
