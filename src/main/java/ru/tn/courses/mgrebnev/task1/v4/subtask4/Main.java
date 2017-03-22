@@ -1,19 +1,20 @@
 package ru.tn.courses.mgrebnev.task1.v4.subtask4;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
- * Created by Max on 13.03.2017.
+ * Created by Max on 22.03.2017.
  */
 public class Main {
 
     public static void main(String[] args){
 
-        String sentence = "домкубдомкубкубкуб";
+        String sentence = "домкубдомкубкуб";
 
-        ArrayList subStrings = new ArrayList();
+        List<String> subStrings = new ArrayList();
 
-        int lengthSubWord = 2;
+        int lengthSubWord = 1;
 
         while(lengthSubWord <= sentence.length()){
             for ( int i = 0; i <= sentence.length()-lengthSubWord; i++){
@@ -22,13 +23,11 @@ public class Main {
             lengthSubWord++;
         }
 
-        System.out.println("Кол-во подстрок =  " + subStrings.size());
-
         int count = 0;
         int сountSubWord = 0;
 
-        ArrayList subWord = new ArrayList();
-        ArrayList counterSubWord = new ArrayList();
+        List<String> subWord = new ArrayList();
+        List<Integer> counterSubWord = new ArrayList();
 
         for ( int i = 0; i < subStrings.size(); i++){
             for (int j = 0; j < subStrings.size(); j++){
@@ -51,18 +50,18 @@ public class Main {
             count = 0;
         }
 
-        int recommendedLength = 2;
-        String subStringsWithRerecommendedLength = "";
+        String resultSubString = subWord.get(0);
+        int Freq = counterSubWord.get(0);
+        int maxElemWithLargeLength = subWord.get(0).length();
 
         for(int i = 0; i < subWord.size(); i++){
-            System.out.println("Подстрока  " + subWord.get(i) + "  встречается " + counterSubWord.get(i) + " раз" );
-
-            if(subWord.get(i).toString().length() == recommendedLength){
-                subStringsWithRerecommendedLength +=subWord.get(i) + "  встречаются " + counterSubWord.get(i) + " раз \n";
+            if ( subWord.get(i).length() >= maxElemWithLargeLength ){
+                maxElemWithLargeLength = subWord.get(i).length();
+                resultSubString = subWord.get(i);
+                Freq = counterSubWord.get(i);
             }
         }
 
-        System.out.println("\nПодстроки с длинной " + recommendedLength + ":\n \n" + subStringsWithRerecommendedLength);
-
+        System.out.println( resultSubString + ", " + Freq );
     }
 }
