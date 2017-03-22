@@ -6,54 +6,40 @@ import java.util.*;
  * Created by dasha on 13.03.2017.
  */
 public class Main{
-    private String word="abcdefghabcabcdeab";
-    private Map<String,Integer> substringArray=new HashMap<>();
+    private String word="abaabaabaaba";
     private Integer maxFrequency=0;
-    private String resultWord;
+    private String resultWord="";
 
-    private void createSubstring(){
-     for(int i=0; i<word.length()-1; i++)
-     {
-         Character startCharacter=word.toCharArray()[i];
-         String startWord=startCharacter.toString();
-         for(int j=i+1; j<word.length(); j++)
-         {
-             Character newChar=word.toCharArray()[j];
-             startWord+=newChar.toString();
-             if(substringArray.containsKey(startWord))
-             {
-                 substringArray.put(startWord,substringArray.get(startWord)+1);
-             }
-             else
-             {
-                 substringArray.put(startWord,1);
-             }
-         }
-         for (Map.Entry<String,Integer> item: substringArray.entrySet() ) {
-             if(item.getValue().intValue() >maxFrequency.intValue())
-             {
-                 maxFrequency=item.getValue();
-                 resultWord=item.getKey();
-             }
-             else if(item.getValue().equals(maxFrequency))
-             {
-                 if(item.getKey().length()>resultWord.length())
-                 {
-                     maxFrequency=item.getValue();
-                     resultWord=item.getKey();
-                 }
-             }
-         }
-     }
+    private void checkSubstring() {
+        for (int i = 0; i < word.length()-1; i++) {
+            for (int j = i+1; j < word.length(); j++) {
+                String currentWord=word.substring(i,j);
+                if(currentWord.length()>1) {
+                    int index = word.indexOf(currentWord,j);
+                    int currentFrequency = 1;
+                    while (index != -1) {
+                        currentFrequency++;
+                        index=word.indexOf(currentWord,index+1);
+                    }
+                    if (maxFrequency < currentFrequency) {
+                        maxFrequency = currentFrequency;
+                        resultWord = currentWord;
+                    } else if (maxFrequency == currentFrequency) {
+                        if (resultWord.length() < currentWord.length()) {
+                            resultWord = currentWord;
+                        }
+                    }
+                }
+            }
+        }
     }
-
 
     private void printResult(){
         System.out.println(maxFrequency+" "+resultWord);
     }
 
     public Main(){
-        createSubstring();
+        checkSubstring();
         printResult();
     }
 
