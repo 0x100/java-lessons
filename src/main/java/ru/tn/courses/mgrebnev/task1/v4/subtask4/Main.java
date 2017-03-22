@@ -12,7 +12,7 @@ public class Main {
 
         String sentence = "домкубдомкубкуб";
 
-        List<String> subStrings = new ArrayList();
+        List<String> subStrings = new ArrayList<>();
 
         int lengthSubWord = 1;
 
@@ -26,8 +26,8 @@ public class Main {
         int count = 0;
         int сountSubWord = 0;
 
-        List<String> subWord = new ArrayList();
-        List<Integer> counterSubWord = new ArrayList();
+        List<String> subWord = new ArrayList<>();
+        List<Integer> counterSubWord = new ArrayList<>();
 
         for ( int i = 0; i < subStrings.size(); i++){
             for (int j = 0; j < subStrings.size(); j++){
@@ -41,7 +41,7 @@ public class Main {
             if ( count >= сountSubWord){
                 сountSubWord = count;
 
-                if(!subWord.contains(subStrings.get(i).toString())){
+                if(!subWord.contains(subStrings.get(i))){
                     subWord.add(subStrings.get(i).toString());
                     counterSubWord.add(count);
                 }
