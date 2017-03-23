@@ -72,3 +72,4 @@ Student projects for Java courses
 
 # Список ЛР:
 - [Лабораторная работа №1](https://github.com/0x100/java-lessons/wiki/task1)
+- [Лабораторная работа №2](https://github.com/0x100/java-lessons/wiki/task2)
