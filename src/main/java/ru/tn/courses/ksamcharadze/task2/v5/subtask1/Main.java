@@ -1,3 +1,5 @@
+package ru.tn.courses.ksamcharadze.task2.v5.subtask1;
+
 import java.util.*;
 
 /**
