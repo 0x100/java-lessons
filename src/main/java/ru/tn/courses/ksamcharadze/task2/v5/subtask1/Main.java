@@ -96,7 +96,7 @@ public class Main {
         char advert = advs.charAt(new Random().nextInt(advs.length()));
         for (int j = fromY; j < toY; j++) for (int k = fromX; k < toX; k++) board[k][j] = advert;
         adverts.put("\tAdvert № " + countAdvert + ": ",
-                    "(" + (fromY + 1) + "," + (fromX + 1) + ") - (" + toY + "," + toX + ")");
+                "(" + (fromY + 1) + "," + (fromX + 1) + ") - (" + toY + "," + toX + ")");
     }
 
     private void addNailOnBoard (int x, int y) {
@@ -152,3 +152,4 @@ public class Main {
     }
 
 }
+
