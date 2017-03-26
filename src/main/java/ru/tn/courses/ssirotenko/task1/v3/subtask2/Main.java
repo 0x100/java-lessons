@@ -19,6 +19,7 @@ public class Main {
 
     public static void main(String[] args) {
         int[] array = getInitialRandomArray();
+        //int[] array = {0,3,0,6,0,0,0,0,0,0};
         System.out.println(Arrays.toString(array));
 
         getCode(array);
@@ -36,7 +37,7 @@ public class Main {
             initialArray[indexDice1] = dice1;
             initialArray[indexDice2] = dice2;
         } else {
-            getInitialRandomArray();
+            System.out.println("Попробуйте еще раз");
         }
 
         return initialArray;
@@ -58,9 +59,18 @@ public class Main {
 
         sum = ints[indexDice1] + ints[indexDice2] ;
 
-        tmp[0] = ints[indexDice1];
-        tmp[1] = ints[indexDice2];
-        tmp[2] = SIZE - sum;
+        if (indexDice1 == 0 || indexDice2 == 9) {
+            tmp[indexDice1 % 3] = ints[indexDice1];
+            tmp[(indexDice1 + 2) % 3] = ints[indexDice2];
+            tmp[(indexDice1 + 1) % 3] = SIZE - sum;
+        }
+        else {
+            tmp[indexDice1 % 3] = ints[indexDice1];
+            tmp[(indexDice1 + 1) % 3] = ints[indexDice2];
+            tmp[(indexDice1 + 2) % 3] = SIZE - sum;
+        }
+        //System.out.printf(Arrays.toString(tmp));
+        System.out.println();
 
         if (sum >= MIN_SUM && sum <= MAX_SUM) {
             for (int i = 0; i < ints.length; i++) {
