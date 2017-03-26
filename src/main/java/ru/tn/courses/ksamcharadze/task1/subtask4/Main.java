@@ -1,3 +1,5 @@
+package ru.tn.courses.ksamcharadze.task1.subtask4;
+
 import java.util.Scanner;
 
 /**
@@ -51,3 +53,4 @@ public class Main {
 
     }
 }
+
