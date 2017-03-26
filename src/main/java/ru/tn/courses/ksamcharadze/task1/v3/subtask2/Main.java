@@ -1,3 +1,7 @@
+package ru.tn.courses.ksamcharadze.task1.v3.subtask2;
+import java.lang.reflect.Array;
+import java.util.Arrays;
+
 /**
  * Created by Коба on 09.03.2017.
  * Секретный замок для сейфа состоит из 10 расположенных в ряд ячеек,
@@ -13,31 +17,24 @@ public class Main {
     private int [] engaged = new int [2];
 
     int[] hackProc (int [] arr, int pos) {
-        boolean hack1, hack2;
+        boolean [] hack = new boolean[2];
         int i_right, i_left;
-        hack1 = hack2 = true;
+        hack[0] = hack[1] = true;
         i_left = i_right = pos;
         do {
             if (i_left - 3 >= 0) {
                 i_left -= 3;
                 arr[i_left] = arr[pos];
             }
-            else hack1 = false;
-
+            else hack[0] = false;
             if (i_right + 3 < arr.length){
                 i_right += 3;
                 arr[i_right] = arr[pos];
             }
-            else hack2 = false;
+            else hack[1] = false;
         }
-        while (hack1 || hack2);
+        while (hack[0] || hack[1]);
         return arr;
-    }
-
-    private void print (int [] arr) {
-        for (int i = 0; i < arr.length; i++)
-            System.out.print(arr[i] + " ");
-        System.out.println("\n");
     }
 
     private int myRand (int from, int to) {
@@ -46,27 +43,25 @@ public class Main {
 
     private int[] initLock (int SIZE) {
         boolean hackLock;
+        int fullSum = 10;
         int [] arr = new int[SIZE];
-        int cube1, cube2, pos;
+        int [] pos = new int[2];
+        int [] cube = new int[2];
         do {
             do {
-                for (int i = 0; i < arr.length; i++) arr[i] = 0;
-                pos = myRand(0, SIZE - 1);
-                cube1 = myRand(1, 6);
-                engaged[0] = pos;
-                arr[pos] = cube1;
+                pos[0] = myRand(0, SIZE - 1);
+                cube[0] = myRand(1, 6);
                 do
-                    pos = myRand(0, SIZE - 1);
-                while (engaged[0] == pos);
-                cube2 = myRand(1, 6);
-                engaged[1] = pos;
-                arr[pos] = cube2;
+                    pos[1] = myRand(0, SIZE - 1);
+                while (pos[0] == pos[1]);
+                cube[1] = myRand(1, 6);
             }
-            while (!(1 <= SIZE - cube1 - cube2 && SIZE - cube1 - cube2 <= 6));
-            hackLock = Math.abs(engaged[0] - engaged[1]) == 0 || Math.abs(engaged[0] - engaged[1]) == 1 || Math.abs(engaged[0] - engaged[1]) % 4 == 0;
+            while (!(1 <= fullSum - cube[0] - cube[1] && fullSum - cube[0] - cube[1] <= 6));
+            hackLock = Math.abs(pos[0] - pos[1]) == 0 || Math.abs(pos[0] - pos[1]) == 1 || Math.abs(pos[0] - pos[1]) % 4 == 0;
         }
         while (!hackLock);
-        System.out.println(SIZE - cube1 - cube2);
+        arr[pos[0]] = cube[0]; engaged[0] = pos[0];
+        arr[pos[1]] = cube[1]; engaged[1] = pos[1];
         return arr;
     }
 
@@ -85,12 +80,12 @@ public class Main {
 
         Main obj = new Main();
         lock = obj.initLock(SIZE);
-        System.out.println("Current lock: ");
-        obj.print(lock);
+        System.out.print("Current lock: ");
+        System.out.println(Arrays.toString(lock));
 
-        System.out.println("Hack lock: ");
+        System.out.print("Hack lock:    ");
         lock = obj.hack(lock);
-        obj.print(lock);
+        System.out.println(Arrays.toString(lock));;
 
     }
 }
