@@ -1,3 +1,6 @@
+
+package ru.tn.courses.kzholumskiy.task1.v2.subtask1;
+
 /**
  * Created by MAG on 12.03.2017.
  */
