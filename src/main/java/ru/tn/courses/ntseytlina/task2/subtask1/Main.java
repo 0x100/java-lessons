@@ -19,14 +19,15 @@ public class Main {
         ads = boardCreator.setNewAdParameters(8, 5, 6);
 
         try {
-            ads.fillAdsForBounds(11, 9);
+            ads.fillAdsForBounds(8, 9);
             System.out.println(ads);
         } catch (AdsSquareMoreThanBoardException e) {
             System.out.println(e.getMessage());
         }
 
         try {
-            ads.fillAdsForBounds(8, 9);
+            ads.fillAdsForBounds(11, 9);
+            System.out.println(ads);
         } catch (AdsSquareMoreThanBoardException e) {
             System.out.println(e.getMessage());
         }
