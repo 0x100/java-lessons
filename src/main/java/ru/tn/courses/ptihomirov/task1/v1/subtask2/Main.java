@@ -1,3 +1,4 @@
+package ru.tn.courses.ptihomirov.task1.v1.subtask2;
 /**
  * Created by Павел on 12.03.2017.
  */
