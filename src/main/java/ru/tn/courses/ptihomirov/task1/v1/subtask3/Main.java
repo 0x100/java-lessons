@@ -1,3 +1,5 @@
+package ru.tn.courses.ptihomirov.task1.v1.subtask3;
+
 import java.util.Arrays;
 
 /**
