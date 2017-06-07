@@ -1,4 +1,4 @@
-﻿package t2;
+﻿package main.java.ru.tn.courses.vdronik.task1.v5.subtask2;
 
 public class Main {
 	public static void main(String[] args) {
